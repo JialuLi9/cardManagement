@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <title>Save Card</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h3>Card Directory</h3>
+  <hr>
+
+  <p class="h4 mb-4">Save Card</p>
+
+  <form action="#" th:action="@{/cards/save}"
+        th:object="${card}" method="POST">
+
+    <!-- Add hidden form field to handle the update-->
+    <input type="hidden" th:field="*{id}">
+
+    <input type="text" th:field="*{cardType}"
+           class="form-control mb-4 w-25" placeholder="Card Type">
+
+    <input type="text" th:field="*{cardholderName}"
+           class="form-control mb-4 w-25" placeholder="Cardholder Name">
+
+    <input type="text" th:field="*{cardNumber}"
+           class="form-control mb-4 w-25" placeholder="Card Number">
+
+    <input type="text" th:field="*{pin}"
+           class="form-control mb-4 w-25" placeholder="Pin">
+
+    <input type="text" th:field="*{CRV}"
+           class="form-control mb-4 w-25" placeholder="CRV">
+
+    <input type="text" th:field="*{Bank Name}"
+           class="form-control mb-4 w-25" placeholder="Bank Name">
+
+    <input type="text" th:field="*{expireDate}"
+           class="form-control mb-4 w-25" placeholder="Expire Date">
+
+    <input type="text" th:field="*{limited}"
+           class="form-control mb-4 w-25" placeholder="Limited">
+
+    <button type="submit" class="btn btn-info col-2">Save</button>
+
+  </form>
+
+  <hr>
+  <a th:href="@{/cards/list}">Back to Card List</a>
+
+</div>
+
+</body>
+
+</html>
